@@ -1,11 +1,22 @@
 import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Note from "./Note";
+import notes from "../notes";
 
-function Heading(){
-    return (
-        <div>
-    <header>
-        <h1>Keeper</h1>
-    </header>
-    </div>)
+function App() {
+  return (
+    <div>
+    <Header />
+    {notes.map((e) => {
+        return (<Note 
+        key={e.key} 
+        head={e.title} 
+        cont={e.content} />
+    );})}
+    <Footer />
+    </div>
+);
 }
-export default Heading;
+
+export default App;
